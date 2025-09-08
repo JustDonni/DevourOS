@@ -1,5 +1,3 @@
-# WARNING: OS ALREADY BUILT
-
 **Its a simple OS from scratch, written in Assembly and C (LATER)**
 # DevourOS (Functional Bootloader)
 
