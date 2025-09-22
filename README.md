@@ -1,24 +1,46 @@
 **Its a simple OS from scratch, written in Assembly and C (LATER)**
+
 # DevourOS (Functional Bootloader)
 
 ## Features
+
 ✅ BIOS-compliant boot sector (512 bytes)  
 ✅ Bootable floppy disk image generation  
 ✅ QEMU and physical hardware support  
-✅ Makefile-based build system  
+✅ Makefile-based build system
 
 ## Quick Start
 
 ### Prerequisites
+
 - NASM (≥ 2.15)
 - QEMU (≥ 5.0)
 - GNU Make
 
-## Build & Run
-- make        # Builds bootloader binary and disk image
-- qemu-system-i386 -fda  build/main_floppy.img # Launches in QEMU
+## Build and Run
 
-Technical Details
+- make  
+  Builds bootloader binary (bootloader.bin), kernel binary (kernel.bin), and floppy disk image (main_floppy.img).
+
+- make clean  
+  Removes all build artifacts from build/ so you can do a fresh rebuild.
+
+- qemu-system-i386 -fda build/main_floppy.img  
+  Launches the floppy disk image in QEMU, emulating a real PC.
+
+- dd if=/dev/zero of=test.img bs=512 count=2880  
+  Creates an empty 1.44 MB floppy disk image (test.img) filled with zeros (used for experiments).
+
+- mkfs.fat -F 12 -n "NBOS" test.img  
+  Formats test.img as a FAT12 filesystem and sets its volume label to NBOS.
+
+- mcopy -i test.img build/kernel.bin "::kernel.bin"  
+  Copies the kernel binary into the root of the floppy disk image without mounting it.
+
+- mdir -i build/main_floppy.img  
+  Lists the contents of the floppy disk image, allowing you to verify that files like kernel.bin are present.
+
+## Technical Details
 
     Boot Address: 0x7C00
 
