@@ -79,7 +79,7 @@ main:
   jmp .halt
 
 msg_hello: db 'DevourOS', ENDL, 0
-msg_second: db 'Dolbik', ENDL, 0 
+msg_second: db 'By Shattered', ENDL, 0 
 
 times 510-($-$$) db 0
 dw 0AA55h
