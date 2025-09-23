@@ -16,6 +16,7 @@
 - NASM (≥ 2.15)
 - QEMU (≥ 5.0)
 - GNU Make
+- Mtools
 
 ## Build and Run
 
