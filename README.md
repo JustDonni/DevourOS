@@ -1,5 +1,3 @@
-**Its a simple OS from scratch, written in Assembly and C (LATER)**
-
 # DevourOS (Functional Bootloader)
 
 ## Features
@@ -9,16 +7,18 @@
 ✅ QEMU and physical hardware support  
 ✅ Makefile-based build system
 
+---
+
 ## Quick Start
 
 ### Prerequisites
 
-- NASM (≥ 2.15)
-- QEMU (≥ 5.0)
+- NASM
+- QEMU
 - GNU Make
 - Mtools
 
-## Build and Run
+### Build and Run
 
 - `make`
   **Builds bootloader binary (bootloader.bin), kernel binary (kernel.bin), and floppy disk image (main_floppy.img).**
@@ -40,3 +40,15 @@
 
 - `mdir -i build/main_floppy.img`
   **Lists the contents of the floppy disk image, allowing you to verify that files like kernel.bin are present.**
+
+---
+
+### Real Hardware Test
+
+---
+
+DevourOS has been successfully booted on **real hardware** in **Legacy BIOS.**
+
+Below is a screenshot from my PC:
+
+![Real Boot](assets/legacy-bios.jpg)
