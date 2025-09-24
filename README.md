@@ -7,8 +7,6 @@
 ✅ QEMU and physical hardware support  
 ✅ Makefile-based build system
 
----
-
 ## Quick Start
 
 ### Prerequisites
@@ -41,11 +39,7 @@
 - `mdir -i build/main_floppy.img`
   **Lists the contents of the floppy disk image, allowing you to verify that files like kernel.bin are present.**
 
----
-
-### Real Hardware Test
-
----
+## Real Hardware Test
 
 DevourOS has been successfully booted on **real hardware** in **Legacy BIOS.**
 
